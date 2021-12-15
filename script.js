@@ -50,4 +50,4 @@ console.log(arr[2]);
 
 
 console.log('arr' + " - object");
-console.log(5 + "20");
+console.log(5 + +"20");
