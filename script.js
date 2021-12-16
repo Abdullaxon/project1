@@ -49,5 +49,27 @@ console.log(arr[2]);
 // alert(`Salom, ${user}`);
 
 
-console.log('arr' + " - object");
-console.log(5 + +"20");
+// console.log('arr' + " - object");
+// console.log(5 + +"20");
+
+
+const numberOfFilms = +prompt('Skolka filmov vii uje posmotrili?', '');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+const a = prompt('Odin iz posledniy prosmotrov filmov', ''),
+      b = prompt('Na skolka otseneti ego', ''),
+      c = prompt('Odin iz posledniy prosmotrov', ''),
+      d = prompt('Na skolka otseneti ego', '');
+
+
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
+
+console.log(personalMovieDB);
