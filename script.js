@@ -1,27 +1,27 @@
 "use strict";
 
-let number = 5;
-const leftBorderWidth = 1;
+// let number = 5;
+// const leftBorderWidth = 1;
 
-number = 10;
-console.log(number);
+// number = 10;
+// console.log(number);
 
 
-const persone = `Alisa`;
-console.log(persone);
+// const persone = `Alisa`;
+// console.log(persone);
 
-const bool = true;
+// const bool = true;
 
-const obj = {
-    name: "John",
-    age: 25,
-    isMarried: false
-};
+// const obj = {
+//     name: "John",
+//     age: 25,
+//     isMarried: false
+// };
 
-console.log(obj.isMarried);
+// console.log(obj.isMarried);
 
-let arr = ['plum.png', 'orange.jpeg', 7, 'apple.bmp', {}, [],];
-console.log(arr[2]);
+// let arr = ['plum.png', 'orange.jpeg', 7, 'apple.bmp', {}, [],];
+// console.log(arr[2]);
 
 // alert("Hello world");
 
@@ -73,3 +73,52 @@ console.log(arr[2]);
 // personalMovieDB.movies[c] = d;
 
 // console.log(personalMovieDB);
+
+// const num = 50;
+
+// if (num === 50) {
+//     console.log("da moy durug ti zalatoy!");
+// } else {
+//     console.log('Izvini brat !!');
+// }
+
+// (num === 50) ? console.log('ok') : console.log('error');
+
+// const carNumber = 70;
+
+// if (carNumber > 69) {
+//     console.log('Its not my car!');
+// } else if (carNumber == 70){
+//     console.log('Yes its my car number');
+// }
+
+// if (1 === '1'){
+//     console.log('istina!');
+// } else {
+//     console.log('Lojj');
+// }
+
+// //varyant2
+
+// if (5 == '5'){
+//     console.log('Istina!')
+// }else {
+//     console.log('Lojj!')
+// }
+
+// let message = (92 > '11' && 58 < 100) ? 'istina!' : 'lojj!';
+
+let a = 30,
+    b = 20,
+    c = 15;
+
+
+if(a > b || b < a){
+    console.log('A katta');
+}else if(b > c || c < b){
+    console.log('B katta');
+}else{
+    console.log('C katta');
+}  
+
+
