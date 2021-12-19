@@ -108,17 +108,25 @@
 
 // let message = (92 > '11' && 58 < 100) ? 'istina!' : 'lojj!';
 
-let a = 30,
-    b = 20,
-    c = 15;
+// let a = 30,
+//     b = 20,
+//     c = 15;
 
 
-if(a > b || b < a){
-    console.log('A katta');
-}else if(b > c || c < b){
-    console.log('B katta');
+// if(a > b || b < a){
+//     console.log('A katta');
+// }else if(b > c || c < b){
+//     console.log('B katta');
+// }else{
+//     console.log('C katta');
+// } 
+
+let age = prompt('Yoshingizni kiriting!');
+
+if(age >= 18){
+    alert("Hush kelibsiz");
 }else{
-    console.log('C katta');
-}  
+    alert('hali yoshsiz');
+}
 
 
