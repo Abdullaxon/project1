@@ -53,26 +53,46 @@
 // console.log(5 + +"20");
 
         // --------------------------1-misol
-// const numberOfFilms = +prompt('Skolka filmov vii uje posmotrili?', '');
+const numberOfFilms = +prompt('Skolka filmov vii uje posmotrili?', '');
 
-// const personalMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genres: [],
-//     privat: false
-// };
-
-// const a = prompt('Odin iz posledniy prosmotrov filmov', ''),
-//       b = prompt('Na skolka otseneti ego', ''),
-//       c = prompt('Odin iz posledniy prosmotrov', ''),
-//       d = prompt('Na skolka otseneti ego', '');
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
 
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[c] = d;
 
-// console.log(personalMovieDB);
+
+
+
+for(let i = 0; i < numberOfFilms; i++) {    
+  let a = prompt('Odin iz posledniy prosmotrov filmov', ''),
+      b = prompt('Na skolka otseneti ego', '');
+     personalMovieDB.movies[a] = b;
+}
+
+console.log(personalMovieDB);
+
+
+// 
+// let num = 50;
+
+// while(num <= 55){
+//     console.log(num);
+//     num++;
+// }
+
+// do {
+//     console.log(num);
+//     num++; 
+// }
+// while (num < 55);
+
+
+
 
 // const num = 50;
 
@@ -121,12 +141,12 @@
 //     console.log('C katta');
 // } 
 
-let age = prompt('Yoshingizni kiriting!');
+// let age = prompt('Yoshingizni kiriting!');
 
-if(age >= 18){
-    alert("Hush kelibsiz");
-}else{
-    alert('hali yoshsiz');
-}
+// if(age >= 18){
+//     alert("Hush kelibsiz");
+// }else{
+//     alert('hali yoshsiz');
+// }
 
 
