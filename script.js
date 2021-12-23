@@ -39,7 +39,7 @@
 
 // console.log(typeof(answers));
 
-                // interpolyatsiya--------------
+// interpolyatsiya--------------
 // const category = 'toys';
 
 // console.log(`https://sqb.uz/${category}/5`);
@@ -52,7 +52,7 @@
 // console.log('arr' + " - object");
 // console.log(5 + +"20");
 
-        // --------------------------1-misol
+// --------------------------1-misol
 const numberOfFilms = +prompt('Skolka filmov vii uje posmotrili?', '');
 
 const personalMovieDB = {
@@ -64,15 +64,21 @@ const personalMovieDB = {
 };
 
 
+for (let i = 0; i < 2; i++) {
+    let a = prompt('Odin iz posledniy prosmotrov filmov', ''),
+        b = prompt('Na skolka otseneti ego', '');
 
+    if(a != null && b != null && a != '' && b != '' && a.length < 50){
 
-
-
-for(let i = 0; i < numberOfFilms; i++) {    
-  let a = prompt('Odin iz posledniy prosmotrov filmov', ''),
-      b = prompt('Na skolka otseneti ego', '');
-     personalMovieDB.movies[a] = b;
+        personalMovieDB.movies[a] = b;
+        console.log('done');
+    }else {
+        console.log('Error');
+        i--;
+    }
 }
+
+
 
 console.log(personalMovieDB);
 
@@ -148,5 +154,3 @@ console.log(personalMovieDB);
 // }else{
 //     alert('hali yoshsiz');
 // }
-
-
