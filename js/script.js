@@ -16,7 +16,14 @@ Yangiliklarni massiv yordamida chiqaring. Html dan ochirip Faqat JS code yozip.
 */
 
 "use strict";
+ 
+const newsGenre = document.querySelector(".promo__genre");
 
+ //newsGenre.innerHTML = "UzNews"; //Dinamichiskiy kontentni o'zgartirish 1 usuli
+
+// newsGenre.textContent = "UzNews"; //textContentga html tag yozib bomidi faqat InnerHtmlga yozsa boladi qavsni ichida <p>UzNews</p>
+
+newsGenre.insertAdjacentHTML("afterbegin","<p>Hello BBS world</p>");
 const news = [
   "FOOTBALL",
   "BASKETBALL",
