@@ -28,7 +28,8 @@ Yangiliklarni massiv yordamida chiqaring. Html dan ochirip Faqat JS code yozip.
 const btnNews = document.querySelector(".btn-news"),
   newsGenre = document.querySelector(".promo__genre"),
   bg = document.querySelector(".promo__bg"),
-  listNews = document.querySelector(".promo__interactive-list");
+  listNews = document.querySelector(".promo__interactive-list"),
+  readBtn = document.querySelector(".readMore");
 
 const news = [
   "FOOTBALL",
@@ -43,6 +44,7 @@ newsGenre.textContent = "UzNews";
 newsGenre.style.color = "crimson";
 
 bg.style.backgroundImage = "url(img/2.jpg)";
+readBtn.style.borderRadius = "50px";
 
 listNews.innerHTML = "";
 news.forEach((itemNews, index) => {
