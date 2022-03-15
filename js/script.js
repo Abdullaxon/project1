@@ -29,7 +29,8 @@ const btnNews = document.querySelector(".btn-news"),
   newsGenre = document.querySelector(".promo__genre"),
   bg = document.querySelector(".promo__bg"),
   listNews = document.querySelector(".promo__interactive-list"),
-  readBtn = document.querySelector(".readMore");
+  readBtn = document.querySelector(".readMore"),
+  input = document.querySelector(".add input");
 
 const news = [
   "FOOTBALL",
@@ -45,12 +46,12 @@ newsGenre.style.color = "crimson";
 
 bg.style.backgroundImage = "url(img/2.jpg)";
 readBtn.style.borderRadius = "50px";
-            // readBtn.onclick = function () {      //knopkani bosganda xodisa roy berishini amalga oshrdik onclick function yordamida bu usul kotta proyektlada oxshamidi
-            //   console.log("hello world");
-            // };
-readBtn.addEventListener('click', () => {
+// readBtn.onclick = function () {      //knopkani bosganda xodisa roy berishini amalga oshrdik onclick function yordamida bu usul kotta proyektlada oxshamidi
+//   console.log("hello world");
+// };
+readBtn.addEventListener("click", () => {
   console.log("Hiiii");
-});            
+});
 listNews.innerHTML = "";
 news.forEach((itemNews, index) => {
   listNews.innerHTML += `
@@ -59,4 +60,9 @@ news.forEach((itemNews, index) => {
       <div class="delete"></div>
     </li>
     `;
+});
+
+input.addEventListener("input", (event) => {
+  // bu yerda biz event orqali form ichidagi inputni  qiymatni oldik
+  console.log(event.target.value);
 });
