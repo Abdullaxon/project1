@@ -1,68 +1,88 @@
-/* -=- Darsga Topshiriq
-
-1) list of news knopkani ochirip tashlang
-
-2) 'BBC' yozuvni orniga 'UzNews'ga almashtiring va rangini oziz istagan rangni tanglang
-
-3) glavniy fon dagi rasimni ozgartiring. Rasim joylashuvi 'img' papkani ichida
-
-4) bizlarda yangiliklardan tashkil topgan massiv bor. 
-Yangiliklarni massiv yordamida chiqaring. Html dan ochirip Faqat JS code yozip.
-
-5) yangiliklarni oldiga ularni raqamlarini qoyip chiqimg (1, 2, 3)
-
-6) read more knopkaga border-radius style qoshing
-
-*/
-
 "use strict";
 
-// const newsGenre = document.querySelector(".promo__genre");
+document.addEventListener("DOMContentLoaded", () => {
+  //DOMContentLoaded bu bizni birinchi html fayllarimiz o'qilgandan keyin java script kolarimiz oqishi uchun xizmat qiladi!
+  const btnNews = document.querySelector(".btn-news"),
+    newsGenre = document.querySelector(".promo__genre"),
+    bg = document.querySelector(".promo__bg"),
+    listNews = document.querySelector(".promo__interactive-list"),
+    readBtn = document.querySelector(".readMore"),
+    addForm = document.querySelector(".add"),
+    addInput = document.querySelector(".adding__input"),
+    checkbox = addForm.querySelector('[type="checkbox'); // chek box ni ovolish
 
-//newsGenre.innerHTML = "UzNews"; //Dinamichiskiy kontentni o'zgartirish 1 usuli
+  const news = [
+    "FOOTBALL",
+    "BASKETBALL",
+    "UFC",
+    "BOX",
+    "AMERICAN FOOTBAL IN EU...",
+  ];
 
-// newsGenre.textContent = "UzNews"; //textContentga html tag yozib bomidi faqat InnerHtmlga yozsa boladi qavsni ichida <p>UzNews</p>
+  const sortArr = (arr) => {
+    arr.sort();
+  };
+  addForm.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-// newsGenre.insertAdjacentHTML("afterbegin","<p>Hello BBS world</p>");
+    let newFilm = addInput.value;
+    const favourite = checkbox.checked;
 
-const btnNews = document.querySelector(".btn-news"),
-  newsGenre = document.querySelector(".promo__genre"),
-  bg = document.querySelector(".promo__bg"),
-  listNews = document.querySelector(".promo__interactive-list"),
-  readBtn = document.querySelector(".readMore"),
-  input = document.querySelector(".add input");
+    if (newFilm) {
+      if (newFilm.length > 21) {
+        newFilm = `${newFilm.substring(0, 21)} ...`;
+      }
+      if (favourite) {
+        console.log("sevimli yangiligingiz qo'shilmoqda");
+      }
+      news.push(newFilm);
+      sortArr(news);
+      createNewsList(news, listNews);
+    }
 
-const news = [
-  "FOOTBALL",
-  "BASKETBALL",
-  "UFC",
-  "BOX",
-  "AMERICAN FOOTBAL IN EU...",
-];
+    //event.target.reset();
+    addInput.value = "";
+  });
 
-btnNews.remove();
-newsGenre.textContent = "UzNews";
-newsGenre.style.color = "crimson";
+  btnNews.remove();
+  newsGenre.textContent = "UzNews";
+  newsGenre.style.color = "crimson";
 
-bg.style.backgroundImage = "url(img/2.jpg)";
-readBtn.style.borderRadius = "50px";
-// readBtn.onclick = function () {      //knopkani bosganda xodisa roy berishini amalga oshrdik onclick function yordamida bu usul kotta proyektlada oxshamidi
-//   console.log("hello world");
-// };
-readBtn.addEventListener("click", () => {
-  console.log("Hiiii");
-});
-listNews.innerHTML = "";
-news.forEach((itemNews, index) => {
-  listNews.innerHTML += `
-    <li class="promo__interactive-item">
-      ${index + 1} ${itemNews}
-      <div class="delete"></div>
-    </li>
-    `;
-});
+  bg.style.backgroundImage = "url(img/2.jpg)";
+  readBtn.style.borderRadius = "50px";
+  // readBtn.onclick = function () {      //knopkani bosganda xodisa roy berishini amalga oshrdik onclick function yordamida bu usul kotta proyektlada oxshamidi
+  //   console.log("hello world");
+  // };
+  // readBtn.addEventListener("click", () => {
+  //   console.log("Hiiii");
+  // });
 
-input.addEventListener("input", (event) => {
-  // bu yerda biz event orqali form ichidagi inputni  qiymatni oldik
-  console.log(event.target.value);
+  function createNewsList(newsList, parent) {
+    parent.innerHTML = "";
+    sortArr(news);
+    newsList.forEach((itemNews, index) => {
+      parent.innerHTML += `
+        <li class="promo__interactive-item">
+          ${index + 1} ${itemNews}
+          <div class="delete"></div>
+        </li>
+        `;
+    });
+
+    document.querySelectorAll(".delete").forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        btn.parentElement.remove();
+        news.splice(i, 1);
+
+        createNewsList(newsList, parent);
+      });
+    });
+  }
+
+  createNewsList(news, listNews);
+
+  // input.addEventListener("input", (event) => {
+  //   // bu yerda biz event orqali form ichidagi inputni  qiymatni oldik
+  //   console.log(event.target.value);
+  // });
 });
